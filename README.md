@@ -25,6 +25,6 @@ To run the 50Fin Users app locally, please follow these steps:
 5. Open your web browser and go to http://localhost:3000 to see the app in action.
 
 
-Acknowledgements
-The 50Fin company for providing the theme inspiration.
-The public API used for fetching user information.
+## Acknowledgements
+1. The 50Fin company for providing the theme inspiration.
+2. The public API used for fetching user information.
