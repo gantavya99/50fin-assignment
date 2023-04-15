@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import "./Table.css";
 import UserForm from "../UserForm/UserForm";
