@@ -1,10 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 import "./Table.css";
+import UserForm from "../UserForm/UserForm";
+
+
 const Table = () => {
   const [data, setData] = useState([]);
   const [text,setText] = useState("");
+  const[showModal,setShowModal]=useState(false);
   const[newUser,setnewUser]=useState({
     firstName:"",
     email:"",
@@ -24,12 +29,21 @@ const Table = () => {
   }, []);
   {console.log(data);}
 
+
+
   const addUser=(e)=>{
        const {value,name} = e.target;
        setnewUser({...newUser,[name]:value});
   }
-  
+
+
+  //adding user to the list with basic validation checks
   const handleSubmit = () => {
+
+    if (!newUser.firstName || !newUser.email || !newUser.phone) {
+        toast.error("Please fill in all the fields.");
+        return;
+      }
     
     const newUserObj = {
       id: data.length + 1, 
@@ -38,27 +52,29 @@ const Table = () => {
       phone: newUser.phone
     };
   
-    
     setData([...data, newUserObj]);
-  
     // Reset the newUser state to empty values
     setnewUser({
       firstName: "",
       email: "",
       phone: ""
     });
+    toast.success("New user added successfully");
+    setShowModal(!showModal);
   };
 
+
+  const modalHandler=()=>{
+    setShowModal(!showModal);
+  }
 
 
   return (
     <div>
-        <input name="firstName" placeholder="Name" type="text" onChange={addUser} value={newUser.firstName} />
-        <input name="email" placeholder="Email" type="email" onChange={addUser} value={newUser.email} />
-        <input name="phone" placeholder="Phone Number" type="number" onChange={addUser} value={newUser.phone} />
+        {showModal&&<UserForm submit={handleSubmit} addUser={addUser} newUser={newUser} closeModal={modalHandler}/>}
         <label>Enter name: </label>
         <input className='searchBar' placeholder="Search here..." type="text" onChange={(e)=>setText(e.target.value)} /> 
-        <button onClick={handleSubmit} className="btn">
+        <button onClick={modalHandler} className="btn">
             Add a record +
         </button>
         {console.log(text)}
@@ -96,6 +112,7 @@ const Table = () => {
       ) : (
         <p>Loading data...</p>
       )}
+      <Toaster />
     </div>
   );
 };
