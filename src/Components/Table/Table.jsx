@@ -95,7 +95,7 @@ const Table = () => {
                 if(text==""){
                     return val;
                 }
-                else if(val.firstName.toLowerCase().includes(text.toLowerCase())){
+                else if(val.firstName.toLowerCase().includes(text.toLowerCase())||val.email.toLowerCase().includes(text.toLowerCase())){
                     return val
                 }
             }).map((user) => (
