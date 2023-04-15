@@ -1,4 +1,4 @@
-/* App.css */
+
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
@@ -39,22 +39,22 @@
     min-width: 180px;
   }
   .user-table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Lighter gray for odd rows */
+    background-color: #f9f9f9; 
   }
   
   .user-table tbody tr:nth-child(even) {
-    background-color: #ffffff; /* White for even rows */
+    background-color: #ffffff; 
   }
   label {
-    /* Add your label styles here */
+    
     margin-top: 4rem;
     font-size: 16px;
     margin-bottom: 8px;
-    display: block; /* To make it block-level element and start on a new line */
+    display: block; 
   }
   
   .searchBar {
-    /* Add your input field styles here */
+    
     width: 30%;
     padding: 8px;
     font-size: 14px;
@@ -66,10 +66,10 @@
   .searchBar:focus {
     
     outline: none;
-    border-color: #007bff; /* Example of changing border color on focus */
+    border-color: #007bff; 
   }
   .btn {
-    /* Add your btn styles here */
+   
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -83,21 +83,14 @@
   }
   
   .btn:hover {
-    /* Add hover styles here */
     background-color: #2e3737; 
-    
-    /* Example of changing background color on hover */
   }
   
   .btn:focus {
-    /* Add focus styles here */
     outline: none;
-    /* Example: Add box-shadow for focus */
     box-shadow: 0 0 3px rgba(39, 43, 48, 0.5);
   }
   
   .btn:active {
-    /* Add active styles here */
-    /* Example: Change background color when button is pressed */
     background-color: #004187;
   }

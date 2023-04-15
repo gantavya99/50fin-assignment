@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import "./Table.css";
 import UserForm from "../UserForm/UserForm";
-
+import { Button } from "../StyledComponents/Styles";
 
 const Table = () => {
   const [data, setData] = useState([]);
@@ -78,9 +78,9 @@ const Table = () => {
         {showModal&&<UserForm submit={handleSubmit} addUser={addUser} newUser={newUser} closeModal={modalHandler}/>}
         <label>Enter name: </label>
         <input className='searchBar' placeholder="Search here..." type="text" onChange={(e)=>setText(e.target.value)} /> 
-        <button onClick={modalHandler} className="btn">
+        <Button onClick={modalHandler} className="btn">
             Add a record +
-        </button>
+        </Button>
         {console.log(text)}
       {data ? (
         <table className="user-table">
