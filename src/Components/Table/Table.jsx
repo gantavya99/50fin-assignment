@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import "./Table.css";
 import UserForm from "../UserForm/UserForm";
@@ -18,15 +18,20 @@ const Table = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get("https://dummyjson.com/users");
-        setData(response.data.users);
-      } catch (error) {
-        console.error("Error while fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+        try {
+          const response = await fetch("https://dummyjson.com/users");
+          if (response.ok) {
+            const data = await response.json();
+            setData(data.users);
+          } else {
+            console.error("Error while fetching data:", response.status);
+          }
+        } catch (error) {
+          console.error("Error while fetching data:", error);
+        }
+      };
+      fetchData();
+  })    
   {console.log(data);}
 
 
