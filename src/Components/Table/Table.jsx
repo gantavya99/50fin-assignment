@@ -84,7 +84,9 @@ const Table = () => {
         className="searchBar"
         placeholder="Search here..."
         type="text"
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => setTimeout(()=>{
+            setText(e.target.value)
+        },500) }
       />
       <Button onClick={modalHandler} className="btn">
         Add a record +
