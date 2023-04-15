@@ -30,7 +30,7 @@ const Table = () => {
         }
       };
       fetchData();
-  })    
+  },[])    
   {console.log(data);}
 
 

@@ -3,13 +3,13 @@ import{useEffect} from "react";
 import "./UserForm.css"
 const UserForm = ({ newUser, addUser,closeModal,submit }) => {
 
-useEffect(() => {
-  document.body.style.overflow="hidden";
+// useEffect(() => {
+//   document.body.style.overflow="hidden";
 
-  return () => {
-    document.body.style.overflow="scroll";
-  }
-}, [])
+//   return () => {
+//     document.body.style.overflow="scroll";
+//   }
+// }, [])
 
 
   return (
